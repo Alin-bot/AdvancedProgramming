@@ -9,3 +9,4 @@ that number is an odd one.
 elements, making sure is symetric. In case of a number lower than 30.000, the code will display the matrix.
   By using a DFS on our adjacency matrix, we are verifying if the graph is connected or not, by making sure if all vertices are connected to the first vertex. In case of not being
 connected, the code will display the connected components using "DFSDisplay()" function, which is making a dfs and printing the components by updating the vector "visited".
+TO BE CONTINUED
