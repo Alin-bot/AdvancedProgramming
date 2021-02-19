@@ -3,7 +3,7 @@
 
   To run it you'll need to be in the src file, compile it with "javac .\optional\Main.java" and run with "java optional.Main " and add the number of your choice.
 
-  Firstly, I verified if the user is giving just one number and if that number is not starting with 0. Then, I'm making sure if the number is not containing any letters and if
+  Firstly, I verified if the user is giving just one number and if that number is not starting with 0. Then, I'm making sure if the number is containing just numbers and if
 that number is an odd one.
   Then I generated a random adjacency matrix with the "ObtainRandomMatrix()" function, which is just making a new matrix and distributes random numbers from 0 to 1 to all the 
 elements, making sure is symetric. In case of a number lower than 30.000, the code will display the matrix.
