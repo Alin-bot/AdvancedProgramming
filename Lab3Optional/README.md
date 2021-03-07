@@ -1,4 +1,4 @@
-  Firstly I made a city named "Iasi". Then I made all the classes from the problem, some with ranking, that who can have ranking, and some with opening and closing hours.
+  Firstly I made a city named "Iasi". Then I made all the classes from the problem, some with ranking, those who can have ranking, some with prices for the tickets, and some with opening and closing hours.
 The Restaurant class has the default hours of 9:30 and 20:00, aquired by calling, for each location, a method from Visitable interface, and the class Location will atribute
 the respective hours with the help of a construcor. Location implements Visitable because, in my opinion, each Location has a timetable, therefore each location should be visitable.
   In the class City I made a method which is going thru all the curent locations of the city and is checking if The locations are Visitable and not Payable. After that an override
