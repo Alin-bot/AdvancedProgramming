@@ -1,5 +1,7 @@
 package com.optional;
 
+import com.github.javafaker.Faker;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -61,11 +63,25 @@ public class Main {
         System.out.println("find acceptable the next schools: " + target);
 
         System.out.print("The schools: ");
-        schoolList.stream()
-                .filter(sch -> schPrefMap.get(sch).contains(students[3]))
+        schoolList.stream().
+                filter(sch -> Objects.equals(schPrefMap.get(sch).stream()
+                        .findFirst()
+                        .orElse(null), students[0]))
                 .forEach(System.out::print);
-        System.out.print(" have the student: " + students[3] + " as their preference");
+        System.out.println(" have the student: " + students[3] + " as their top preference");
         System.out.println();
 
+        Faker faker = new Faker();
+        for (Student s : students) {
+            System.out.print("The new name of the student: " + s);
+            s.setStudentName(faker.name().fullName());
+            System.out.println(" is: " + s.getStudentName());
+        }
+
+        for (School h : schools) {
+            System.out.print("The new name of the school: " + h);
+            h.setSchoolName(faker.university().name());
+            System.out.println(" is: " + h.getSchoolName());
+        }
     }
 }
