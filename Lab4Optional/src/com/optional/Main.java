@@ -1,6 +1,7 @@
 package com.optional;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -12,7 +13,9 @@ public class Main {
                 .toArray(Student[]::new);
 
         List<Student> studentList = new ArrayList<>(); // list of students
-        Collections.addAll(studentList, students);
+        for (Student s : students) {
+            studentList.add(s);
+        }
         Collections.sort(studentList, Comparator.comparing(Student::getStudentName)); // sorting the list
 
         var schools = IntStream.rangeClosed(0, 2)
@@ -20,11 +23,15 @@ public class Main {
                 .toArray(School[]::new);
 
         TreeSet<School> schoolTreeSet = new TreeSet<>(); // tree set of schools
-        Collections.addAll(schoolTreeSet, schools);
+        for (School s : schools) {
+            schoolTreeSet.add(s);
+        }
 
 
         List<School> schoolList = new ArrayList<>(); // list of schools
-        Collections.addAll(schoolList, schools);
+        for (School s : schools) {
+            schoolList.add(s);
+        }
 
         Map<Student, List<School>> stdPrefMap = new HashMap<>(); // creating the maps for the preferences of the students
         stdPrefMap.put(students[0], Arrays.asList(schools[0], schools[1], schools[2]));
@@ -39,11 +46,26 @@ public class Main {
 
         System.out.println(stdPrefMap.toString());
         System.out.println(schPrefMap.toString());
+        System.out.println();
 
         Problem p = new Problem(stdPrefMap, schPrefMap);
 
+        List<School> target = Arrays.asList(schools[0], schools[2]);
+        List<Student> result = studentList.stream()
+                .filter(std -> stdPrefMap.get(std).containsAll(target))
+                .collect(Collectors.toList());
+        System.out.print("The students: ");
+        for (Student s : result) {
+            System.out.print(s + " ");
+        }
+        System.out.println("find acceptable the next schools: " + target);
+
+        System.out.print("The schools: ");
+        schoolList.stream()
+                .filter(sch -> schPrefMap.get(sch).contains(students[3]))
+                .forEach(System.out::print);
+        System.out.print(" have the student: " + students[3] + " as their preference");
+        System.out.println();
 
     }
-
-
 }
