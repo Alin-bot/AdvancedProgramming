@@ -12,9 +12,7 @@ public class Main {
                 .toArray(Student[]::new);
 
         List<Student> studentList = new ArrayList<>(); // list of students
-        for (Student s : students) {
-            studentList.add(s);
-        }
+        Collections.addAll(studentList, students);
         Collections.sort(studentList, Comparator.comparing(Student::getStudentName)); // sorting the list
 
         var schools = IntStream.rangeClosed(0, 2)
@@ -22,15 +20,11 @@ public class Main {
                 .toArray(School[]::new);
 
         TreeSet<School> schoolTreeSet = new TreeSet<>(); // tree set of schools
-        for (School s : schools) {
-            schoolTreeSet.add(s);
-        }
+        Collections.addAll(schoolTreeSet, schools);
 
 
         List<School> schoolList = new ArrayList<>(); // list of schools
-        for (School s : schools) {
-            schoolList.add(s);
-        }
+        Collections.addAll(schoolList, schools);
 
         Map<Student, List<School>> stdPrefMap = new HashMap<>(); // creating the maps for the preferences of the students
         stdPrefMap.put(students[0], Arrays.asList(schools[0], schools[1], schools[2]));
@@ -45,5 +39,11 @@ public class Main {
 
         System.out.println(stdPrefMap.toString());
         System.out.println(schPrefMap.toString());
+
+        Problem p = new Problem(stdPrefMap, schPrefMap);
+
+
     }
+
+
 }
