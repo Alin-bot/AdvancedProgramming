@@ -1,7 +1,5 @@
 package com.compulsory;
 
-import java.awt.*;
-
 public class Item {
 
         String name;
