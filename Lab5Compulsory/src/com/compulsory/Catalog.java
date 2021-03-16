@@ -8,30 +8,54 @@ import java.util.List;
 public class Catalog implements Serializable {
 
     private String catalogName;
-    private transient List<Item> itemList = new ArrayList<>();
+    private String path;
+    private List<Item> itemList;
 
-    public List<Item> getItemList() {
-        return itemList;
+    public Catalog(String catalogName, String path) throws InvalidCatalogException {
+        this.itemList = new ArrayList<>();
+
+        if (catalogName == null || catalogName.replaceAll("\\s", "").isEmpty())
+            throw new InvalidCatalogException("Error: the catalog's name is empty!");
+        this.catalogName = catalogName;
+
+        if (path == null || path.replaceAll("\\s", "").isEmpty())
+            throw new InvalidCatalogException("Error: the catalog's path is empty!");
+        this.path = path;
     }
 
     public String getCatalogName() {
         return catalogName;
     }
 
-    public Catalog(String catalogName) {
+    public String getPath() {
+        return path;
+    }
+
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    public void setCatalogName(String catalogName) {
         this.catalogName = catalogName;
     }
 
-    public void add(Item entry) {
-        itemList.add(entry);
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
+    }
+
+    public void add(Item item) {
+        itemList.add(item);
     }
 
     public void list() {
-        System.out.print("The catalog " + catalogName + " has the items: ");
+        System.out.println("The catalog " + catalogName + " has: ");
         for (Item t : itemList) {
-            System.out.print(t.getName() + "; ");
+            System.out.println("- the " + t.getClass().getSimpleName() + ": " + t.getName() + ";");
         }
-        System.out.println();
         System.out.println();
     }
 
@@ -52,24 +76,8 @@ public class Catalog implements Serializable {
         }
     }
 
-    public void save(Catalog catalog) throws IOException {
-        FileOutputStream fos = new FileOutputStream("copy.txt");
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(catalog);
-        oos.flush();
-        fos.close();
-        System.out.println("Saved successfully!");
-        System.out.println();
-    }
-
-    public void load(String file) throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream(file);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        Catalog catalog = (Catalog)ois.readObject();
-        this.catalogName = catalog.catalogName;
-        this.itemList = catalog.itemList;
-        fis.close();
-        System.out.println("Loaded successfully!");
-        System.out.println();
+    @Override
+    public String toString() {
+        return catalogName;
     }
 }
