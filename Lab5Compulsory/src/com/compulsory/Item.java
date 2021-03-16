@@ -1,11 +1,14 @@
 package com.compulsory;
 
-public class Item {
+import java.io.Serializable;
+import java.nio.file.Path;
 
-        String name;
-        String path;
+public abstract class Item implements Serializable {
 
-    public Item(String name, String path) {
+    String name;
+    Path path;
+
+    public Item(String name, Path path) {
         this.name = name;
         this.path = path;
     }
@@ -18,11 +21,11 @@ public class Item {
         this.name = name;
     }
 
-    public String getPath() {
+    public Path getPath() {
         return path;
     }
 
-    public void setPath(String path) {
+    public void setPath(Path path) {
         this.path = path;
     }
 
