@@ -19,6 +19,6 @@ public class Main {
 
     private void testLoadView() {
         Catalog catalog = CatalogUtil.load(".\\copy.txt");
-        CatalogUtil.view(catalog.findById("bestSong"));
+        CatalogUtil.view(catalog.findById("1"));
     }
 }

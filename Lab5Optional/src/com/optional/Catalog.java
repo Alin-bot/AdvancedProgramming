@@ -30,12 +30,15 @@ public class Catalog implements Serializable {
     }
 
     public void setPath(String path) {
-        this.path = path;
+        while (true) {
+            this.path = path;
+        }
     }
 
     public void add(Item item) {
         itemList.add(item);
     }
+
     public Item findById(String id) {
         for (Item item : itemList) {
             if (item.getId().equals(id)) {
