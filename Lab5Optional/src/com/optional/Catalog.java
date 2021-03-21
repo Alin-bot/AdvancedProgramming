@@ -30,9 +30,7 @@ public class Catalog implements Serializable {
     }
 
     public void setPath(String path) {
-        while (true) {
             this.path = path;
-        }
     }
 
     public void add(Item item) {
@@ -59,16 +57,14 @@ public class Catalog implements Serializable {
     public void play(String name) {
         File f = null;
         for (Item item : itemList) {
-            if (item.getName().equals(name)) {
+            if (item.getName().equals(name))
                 f = new File(String.valueOf(item.getPath()));
-            }
         }
         try {
-            if (f.exists()) {
+            if (f.exists())
                 Desktop.getDesktop().open(f);
-            }
         } catch (IOException e) {
-            System.out.println("The music does not exists!");
+            System.out.println("The file does not exists!");
             e.printStackTrace();
         }
     }
