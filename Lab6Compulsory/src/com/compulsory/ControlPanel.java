@@ -8,10 +8,15 @@ import java.io.File;
 import java.io.IOException;
 
 public class ControlPanel extends JPanel {
+
     final MainFrame frame;
+
+    //all buttons (Save, Load, Reset, Exit)
     JButton saveBtn = new JButton("Save");
-    //create all buttons (Load, Reset, Exit)
- //...TODO
+    JButton loadBtn = new JButton("Load");
+    JButton resetBtn = new JButton("Reset");
+    JButton exitBtn = new JButton("Exit");
+
     public ControlPanel(MainFrame frame) {
         this.frame = frame; init();
     }
@@ -26,7 +31,7 @@ public class ControlPanel extends JPanel {
     private void save(ActionEvent e) {
         try {
             ImageIO.write(frame.canvas.image, "PNG", new File("d:/test.png"));
-        } catch (IOException ex) { System.err.println(ex); }
+        } catch (IOException ex) { System.err.println("Can't save!"); }
     }
  //...TODO
 }
