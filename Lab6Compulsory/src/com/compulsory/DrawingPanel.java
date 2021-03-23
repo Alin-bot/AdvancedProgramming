@@ -14,9 +14,11 @@ public class DrawingPanel extends JPanel {
     final static int W = 800, H = 600;
     BufferedImage image; //the offscreen image
     Graphics2D graphics; //the "tools" needed to draw in the image
+
     public DrawingPanel(MainFrame frame) {
         this.frame = frame; createOffscreenImage(); init();
     }
+
     private void createOffscreenImage() {
         image = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
         graphics = image.createGraphics();
