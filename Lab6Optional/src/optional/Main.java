@@ -1,3 +1,5 @@
+package optional;
+
 import javafx.application.Application;
 
 public class Main {

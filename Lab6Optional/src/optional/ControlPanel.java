@@ -1,6 +1,6 @@
-import javafx.application.Application;
+package optional;
+
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -8,11 +8,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ControlPanel extends Pane {
 
@@ -31,10 +26,6 @@ public class ControlPanel extends Pane {
         Button button4 = new Button("Exit");
 
         button1.setOnAction(e -> {
-            //FileChooser fileChooser = new FileChooser();
-            //fileChooser.setTitle("Save at:");
-            //fileChooser.showOpenDialog(root.getScene().getWindow());
-
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Save at:");
             fileChooser.setInitialFileName("myphoto");
@@ -45,7 +36,20 @@ public class ControlPanel extends Pane {
             File file = fileChooser.showSaveDialog(root.getScene().getWindow());
 
             if (file != null) {
-                saveTextToFile("nothing", file);
+                save();
+            }
+        });
+        button2.setOnAction(e -> {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Load from:");
+
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PNG Files", "*.png");
+            fileChooser.getExtensionFilters().add(extFilter);
+
+            File file = fileChooser.showOpenDialog(root.getScene().getWindow());
+
+            if (file != null) {
+                load();
             }
         });
         button3.setOnAction(e -> {
@@ -60,15 +64,11 @@ public class ControlPanel extends Pane {
         root.setAlignment(Pos.CENTER);
     }
 
-    private void saveTextToFile(String content, File file) {
-        try {
-            PrintWriter writer;
-            writer = new PrintWriter(file);
-            writer.println(content);
-            writer.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    private void save() {
+
+    }
+    private void load() {
+
     }
     public HBox getRoot() {
         return root;

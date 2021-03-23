@@ -1,0 +1,13 @@
+#for-font {
+    -fx-font-family: 'OCR A Extended'
+}
+.label {
+    -fx-font-family: 'OCR A Extended';
+}
+.button {
+    -fx-font-family: 'OCR A Extended';
+    -fx-text-fill: black;
+}
+.text-field {
+    -fx-max-width: 40;
+}

@@ -1,3 +1,5 @@
+package optional;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -22,6 +24,7 @@ public class ConfigPanel extends Pane {
         MenuItem item3 = new MenuItem("Bright Yellow");
         MenuItem item4 = new MenuItem("Relaxing Green");
         MenuItem item5 = new MenuItem("Again Black");
+
         MenuButton menuButton = new MenuButton("Pick color", null, item1, item2, item3, item4, item5);
         menuButton.setPrefWidth(120);
 
@@ -47,18 +50,14 @@ public class ConfigPanel extends Pane {
         });
 
         Label sidesText = new Label("Number of sides:");
-        sidesText.setStyle("-fx-text-fill: white; -fx-font-family: 'OCR A Extended'; -fx-font-size: 20");
+        sidesText.setStyle("-fx-text-fill: white; -fx-font-size: 20");
         TextField sidesInput = new TextField();
-        sidesInput.setStyle("-fx-max-width: 30");
-        sidesInput.setOnAction(e -> sidesInput.setText("Good!"));
 
         Label sizeText = new Label("The size:");
-        sizeText.setStyle("-fx-text-fill: white; -fx-font-family: 'OCR A Extended'; -fx-font-size: 20");
+        sizeText.setStyle("-fx-text-fill: white; -fx-font-size: 20");
         TextField sizeInput = new TextField();
-        sizeInput.setStyle("-fx-max-width: 40");
 
         Button button = new Button("Submit");
-        button.setStyle("");
 
         button.setOnAction(e -> {
             if (!sidesInput.getText().equals(""))
