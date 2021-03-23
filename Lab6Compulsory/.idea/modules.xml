@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Lab6Compulsory.iml" filepath="$PROJECT_DIR$/Lab6Compulsory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab6Optional.iml" filepath="$PROJECT_DIR$/Lab6Optional.iml" />
     </modules>
   </component>
 </project>
