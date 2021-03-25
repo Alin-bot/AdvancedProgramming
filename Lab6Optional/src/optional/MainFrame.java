@@ -1,13 +1,13 @@
 package optional;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainFrame extends Application {
 
@@ -16,13 +16,12 @@ public class MainFrame extends Application {
     ControlPanel controlPanel;
 
     @Override
-    public void init() throws Exception {
+    public void init() {
         System.out.println("App started!");
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
-        //Parent root = FXMLLoader.load(getClass().getResource("resources/sample.fxml"));
+    public void start(Stage stage) throws IOException {
         stage.setTitle("Super Drawing Machine");
 
         configPanel = new ConfigPanel();
@@ -43,6 +42,8 @@ public class MainFrame extends Application {
 
         border_pane.getStylesheets().add("stylesheets/style.css");
 
+        //Parent root = FXMLLoader.load(getClass().getResource("resources/sample.fxml"));
+
         Scene scene = new Scene(border_pane, 800,700,  Color.web("#000000"));
         stage.setScene(scene);
         stage.setResizable(false);
@@ -50,7 +51,7 @@ public class MainFrame extends Application {
     }
 
     @Override
-    public void stop() throws Exception {
+    public void stop() {
         System.out.println("App closed!");
     }
 }

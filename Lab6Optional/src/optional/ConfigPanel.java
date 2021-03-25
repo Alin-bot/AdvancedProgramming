@@ -19,6 +19,7 @@ public class ConfigPanel extends Pane {
     public void init() {
         root.setSpacing(10);
 
+        // menu of colors
         MenuItem item1 = new MenuItem("Cool Blue");
         MenuItem item2 = new MenuItem("Fire Red");
         MenuItem item3 = new MenuItem("Bright Yellow");
@@ -49,14 +50,17 @@ public class ConfigPanel extends Pane {
             color = Color.rgb(0, 0, 0, 0.4);
         });
 
+        // for sides
         Label sidesText = new Label("Number of sides:");
         sidesText.setStyle("-fx-text-fill: white; -fx-font-size: 20");
         TextField sidesInput = new TextField();
 
+        // for size
         Label sizeText = new Label("The size:");
         sizeText.setStyle("-fx-text-fill: white; -fx-font-size: 20");
         TextField sizeInput = new TextField();
 
+        // submit button
         Button button = new Button("Submit");
 
         button.setOnAction(e -> {
@@ -71,6 +75,7 @@ public class ConfigPanel extends Pane {
             System.out.println("Sides: " + sides + " Size: " + size);
         });
 
+        // adding
         root.getChildren().addAll(sidesText, sidesInput, sizeText, sizeInput, button, menuButton);
         root.setAlignment(Pos.CENTER);
     }
