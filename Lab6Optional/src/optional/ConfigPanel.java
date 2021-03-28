@@ -8,8 +8,8 @@ import javafx.scene.paint.Color;
 public class ConfigPanel extends Pane {
 
     public HBox root;
-    private int size = 10;
-    private int sides = 3;
+    private int size;
+    private int sides;
     private Color color;
 
     public ConfigPanel() {
@@ -59,6 +59,7 @@ public class ConfigPanel extends Pane {
         Label sizeText = new Label("The size:");
         sizeText.setStyle("-fx-text-fill: white; -fx-font-size: 20");
         TextField sizeInput = new TextField();
+        // TODO sliders for picking size and sides number
 
         // submit button
         Button button = new Button("Submit");
@@ -67,11 +68,11 @@ public class ConfigPanel extends Pane {
             if (!sidesInput.getText().equals(""))
                 sides = Integer.parseInt(sidesInput.getText());
             else
-                sides = 3;
+                sides = 0;
             if (!sizeInput.getText().equals(""))
                 size = Integer.parseInt(sizeInput.getText());
             else
-                size = 10;
+                size = 0;
             System.out.println("Sides: " + sides + " Size: " + size);
         });
 

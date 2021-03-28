@@ -1,8 +1,46 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="optional.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="100.0" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="optional.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1">
+         <children>
+            <Button minWidth="70.0" mnemonicParsing="false" onAction="#circle" prefHeight="40.0" text="Circle">
+               <VBox.margin>
+                  <Insets right="-0.0" top="20.0" />
+               </VBox.margin></Button>
+            <Button minWidth="70.0" mnemonicParsing="false" onAction="#star" prefHeight="40.0" text="Star">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button minWidth="70.0" mnemonicParsing="false" onAction="#none" prefHeight="40.0" text="Polygon">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button minWidth="70.0" mnemonicParsing="false" prefHeight="40.0" text="None">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button minWidth="70.0" mnemonicParsing="false" prefHeight="40.0" text="None" />
+            <Button minWidth="70.0" mnemonicParsing="false" prefHeight="40.0" text="None" />
+            <Button minWidth="70.0" mnemonicParsing="false" prefHeight="40.0" text="None" />
+            <Button minWidth="70.0" mnemonicParsing="false" prefHeight="40.0" text="None" />
+         </children></VBox>
+   </children>
 </GridPane>
