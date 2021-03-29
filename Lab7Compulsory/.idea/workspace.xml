@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8d06782-7c2b-4aef-8b7e-7b9931bce45c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab7Compulsory.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/compulsory/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/compulsory/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/compulsory/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/compulsory/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab6Optional/out/production/Lab6Optional/optional/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab6Optional/out/production/Lab6Optional/optional/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab7Compulsory/com/compulsory/Token.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/compulsory/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compulsory/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/compulsory/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compulsory/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/compulsory/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/compulsory/Token.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +130,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616994548328</updated>
-      <workItem from="1616994550177" duration="6029000" />
+      <workItem from="1616994550177" duration="14094000" />
     </task>
     <servers />
   </component>

@@ -7,18 +7,29 @@ import java.util.stream.IntStream;
 
 public class Board implements Runnable {
 
-    public int numberOfToken;
+    public int numberOfTokens;
     List<Token> tokenList;
 
-    public Board(int numberOfToken) {
-        this.numberOfToken = numberOfToken;
-        var tokens = IntStream.rangeClosed(0, numberOfToken)
-                .mapToObj(i -> new Token() )
+    public Board(int numberOfTokens) {
+        this.numberOfTokens = numberOfTokens;
+        var tokens = IntStream.rangeClosed(0, numberOfTokens)
+                .mapToObj(i -> new Token())
                 .toArray(Token[]::new);
-        List<Token> tokenList = new ArrayList<>(); // list of tokens
+        tokenList = new ArrayList<>(); // list of tokens
         Collections.addAll(tokenList, tokens);
 
+        for (Token tok : tokenList) {
+            for (Token en : tokenList) {
+                if (tok != en) {
+                    tok.addNode(en);
+                }
+            }
+        }
 
+        for (Token t : tokenList) {
+            System.out.println(t);
+            System.out.println(t.getMap());
+        }
     }
 
     @Override
