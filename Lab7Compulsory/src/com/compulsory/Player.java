@@ -1,15 +1,14 @@
 package com.compulsory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 
     private String name;
-    private int point;
+    private final List<Token> pointList = new ArrayList<>();
 
-    public int getPoint() {
-        return point;
-    }
-
-    public void setPoint(int point) {
-        this.point = point;
+    public void addTokenPoint(Token token) {
+        pointList.add(token);
     }
 }
