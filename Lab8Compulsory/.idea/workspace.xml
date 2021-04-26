@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99164b42-444e-468b-945c-5b64ab3ec51b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab8Compulsory.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compulsory/Main.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab9Compulsory/Lab9Compulsory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/compulsory/GenresDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/compulsory/GenresDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/compulsory/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/compulsory/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/compulsory/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/compulsory/Singleton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,19 +57,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -88,6 +73,7 @@
       <updated>1618752538983</updated>
       <workItem from="1618752541629" duration="16406000" />
       <workItem from="1618775686081" duration="8771000" />
+      <workItem from="1618784579966" duration="4275000" />
     </task>
     <servers />
   </component>

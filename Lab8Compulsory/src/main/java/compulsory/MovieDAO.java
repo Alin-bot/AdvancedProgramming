@@ -8,7 +8,7 @@ public class MovieDAO {
 
     public Movie findById(Integer id) throws SQLException {
         Movie movie = new Movie();
-        Singleton sing = new Singleton();
+        Singleton sing = Singleton.getInstance();
 
         PreparedStatement stmt = sing.con.prepareStatement("SELECT * FROM movies WHERE id = ?");
         stmt.setInt(1, id);
@@ -27,7 +27,7 @@ public class MovieDAO {
 
     public List<Movie> findByName(String title) throws SQLException {
         List<Movie> movieList = new ArrayList<>();
-        Singleton sing = new Singleton();
+        Singleton sing = Singleton.getInstance();
 
         PreparedStatement stmt = sing.con.prepareStatement("SELECT * FROM movies WHERE title = ?");
         stmt.setString(1, title);
@@ -49,7 +49,7 @@ public class MovieDAO {
     }
 
     public void addMovie(Movie movie) throws SQLException {
-        Singleton sing = new Singleton();
+        Singleton sing = Singleton.getInstance();
 
         sing.con.setAutoCommit(false);
 

@@ -1,15 +1,13 @@
 package com.compulsory.lab9compulsory;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "actors", schema = "test", catalog = "")
 public class ActorsEntity {
     private String name;
     private String role;
+    private Long id;
 
     @Basic
     @Column(name = "name")
@@ -49,5 +47,14 @@ public class ActorsEntity {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Id
+    public Long getId() {
+        return id;
     }
 }

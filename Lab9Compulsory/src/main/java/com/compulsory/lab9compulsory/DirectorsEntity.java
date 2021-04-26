@@ -1,14 +1,12 @@
 package com.compulsory.lab9compulsory;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "directors", schema = "test", catalog = "")
 public class DirectorsEntity {
     private String name;
+    private Long id;
 
     @Basic
     @Column(name = "name")
@@ -35,5 +33,14 @@ public class DirectorsEntity {
     @Override
     public int hashCode() {
         return name != null ? name.hashCode() : 0;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Id
+    public Long getId() {
+        return id;
     }
 }

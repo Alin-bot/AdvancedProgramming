@@ -10,8 +10,7 @@ public class GenresDAO {
 
     public Genre findById(Integer id) throws SQLException {
         Genre genre = new Genre();
-        Singleton sing = new Singleton();
-
+        Singleton sing = Singleton.getInstance();
         PreparedStatement stm = sing.con.prepareStatement("SELECT * FROM genres WHERE id = ?");
         stm.setInt(1, id);
         ResultSet result = stm.executeQuery();
@@ -26,7 +25,7 @@ public class GenresDAO {
 
     public List<Genre> findByName(String name) throws SQLException {
         List<Genre> genresList = new ArrayList<>();
-        Singleton sing = new Singleton();
+        Singleton sing = Singleton.getInstance();
 
         PreparedStatement stm = sing.con.prepareStatement("SELECT * FROM genres WHERE name = ?");
         stm.setString(1, name);
@@ -45,7 +44,7 @@ public class GenresDAO {
     }
 
     public void addGenre(Genre genre) throws SQLException {
-        Singleton sing = new Singleton();
+        Singleton sing = Singleton.getInstance();
 
         sing.con.setAutoCommit(false);
 

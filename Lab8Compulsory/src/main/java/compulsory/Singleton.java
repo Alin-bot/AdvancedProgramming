@@ -9,7 +9,7 @@ class Singleton {
         private static Singleton instance = null;
         public Connection con;
 
-        Singleton() throws SQLException {
+        private Singleton() throws SQLException {
             con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "");
         }
 
