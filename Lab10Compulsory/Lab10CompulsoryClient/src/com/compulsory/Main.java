@@ -24,21 +24,26 @@ public class Main {
             while (true) {
                 System.out.print("Enter a command: ");
                 String request = scan.nextLine();
-                if (request.equals("exit")) {
-                    System.out.println("Goodbye!");
-                    break;
-                }
 
                 out.println(request); // sending our command to the server
                 String response = in.readLine(); // waiting a response from the server
 
                 // if the server stopped
-                if (response.equals("Server stopped")) {
+                if (response.equals("Server stopped!")) {
                     System.out.println("Server stopped!");
                     break;
                 }
 
                 System.out.println(response); // out if the server got our request
+
+                if (request.equals("exit")) {
+                    response = in.readLine();
+                    System.out.println("Goodbye!");
+                    break;
+                }
+
+
+
             }
         } catch (UnknownHostException e) {
             System.err.println("No server listening... " + e);

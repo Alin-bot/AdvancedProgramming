@@ -15,7 +15,8 @@ public class SimpleServer {
                 System.out.println ("Waiting for a client ...");
                 Socket socket = serverSocket.accept();
                 // Execute the client's request in a new thread
-                new ClientThread(socket).start();
+                new ClientThread(socket, serverSocket).start();
+                System.out.println("A client has connected!");
             }
         } catch (IOException e) {
             System.err. println ("Ooops... " + e);
