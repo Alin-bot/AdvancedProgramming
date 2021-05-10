@@ -20,30 +20,43 @@ public class Main {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader (new InputStreamReader(socket.getInputStream())) ) {
 
-            // Send a request to the server
-            while (true) {
-                System.out.print("Enter a command: ");
-                String request = scan.nextLine();
+            System.out.println("Hi! Register or login using proper commands, or stop the server using 'stop'.");
+            System.out.print("Enter a command: ");
+            String request = scan.nextLine();
 
-                out.println(request); // sending our command to the server
-                String response = in.readLine(); // waiting a response from the server
+            out.println(request); // sending our command to the server
+            String response = in.readLine(); // waiting a response from the server
 
-                // if the server stopped
-                if (response.equals("Server stopped!")) {
-                    System.out.println("Server stopped!");
-                    break;
+            if (response.equals("Server stopped!")) {
+                System.out.println(response);
+            }
+            if (response.equals("Connected!")) {
+                System.out.println(response);
+
+                // client connected
+                while (true) {
+                    System.out.print("Enter a command: ");
+                    request = scan.nextLine();
+
+                    out.println(request); // sending our command to the server
+
+                    // exit command
+                    if (request.equals("exit")) {
+                        System.out.println("Goodbye!");
+                        break;
+                    }
+
+                    response = in.readLine(); // waiting a response from the server
+
+
+                    System.out.println(response); // out if the server got our request
+//                    response = in.readLine();
+
+
+
                 }
-
-                System.out.println(response); // out if the server got our request
-
-                if (request.equals("exit")) {
-                    response = in.readLine();
-                    System.out.println("Goodbye!");
-                    break;
-                }
-
-
-
+            } else if (response.equals("Not connected!")) {
+                System.out.println(response);
             }
         } catch (UnknownHostException e) {
             System.err.println("No server listening... " + e);
