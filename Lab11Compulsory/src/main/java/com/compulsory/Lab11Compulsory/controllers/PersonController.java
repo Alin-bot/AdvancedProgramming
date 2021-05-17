@@ -11,18 +11,22 @@ import java.util.List;
 @RequestMapping("/person")
 public class PersonController {
     private final List<Person> persons = new ArrayList<>();
+
     public PersonController() {
         persons.add(new Person(1, "Mask"));
         persons.add(new Person(2, "Gloves"));
     }
+    
     @GetMapping
     public List<Person> getPersons() {
         return persons;
     }
+
     @GetMapping("/count")
     public int countPersons() {
         return persons.size();
     }
+
     @GetMapping("/{id}")
     public Person getPerson(@PathVariable("id") int id) {
         return persons.stream()
@@ -54,7 +58,7 @@ public class PersonController {
         }
         person.setName(name);
         return new ResponseEntity<>(
-                "Person updated successsfully", HttpStatus.OK);
+                "Person updated successfully", HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{id}")
@@ -62,10 +66,10 @@ public class PersonController {
         Person person = findById(id);
         if (person == null) {
             return new ResponseEntity<>(
-                    "Product not found", HttpStatus.GONE);
+                    "Person not found", HttpStatus.GONE);
         }
         persons.remove(person);
-        return new ResponseEntity<>("Product removed", HttpStatus.OK);
+        return new ResponseEntity<>("Person removed", HttpStatus.OK);
     }
 
     Person findById(int id){
