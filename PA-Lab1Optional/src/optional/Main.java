@@ -5,7 +5,7 @@ import java.util.Arrays;
 //1: cd .\src
 //2: javac .\optional\Main.java
 //3: java optional.Main
-public class Main { // Vezeteu Alexandru-Alin
+public class Main {
     //->Run ->Edit configurations ->Modify options ->add VM options ->VM options: -Xms8G -Xmx8G -Xss1024M
     public static void main(String[] args) {
         long startTime = System.nanoTime(); // starting the counting
