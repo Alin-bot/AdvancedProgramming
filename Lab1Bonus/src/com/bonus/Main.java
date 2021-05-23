@@ -12,9 +12,10 @@ public class Main {
         System.out.print("Please enter the number of nodes: ");
         int nodes = scan.nextInt();
 
+
         // random root
         Random rand = new Random();
-        int root = rand.nextInt(nodes);
+        int root = rand.nextInt(nodes + 1);
         System.out.println("The root: " + root);
 
         // array of sons
@@ -29,7 +30,7 @@ public class Main {
         // give dads to nodes if they are not roots
         for (int i = 0; i < nodes; i++) {
             if (array[i].equals("no")) {
-                array[i] = String.valueOf(availableRoots[rand.nextInt((roots + 1))]);
+                array[i] = String.valueOf(availableRoots[rand.nextInt(roots + 1)]);
                 availableRoots[++roots] = i;
             }
         }
@@ -38,9 +39,9 @@ public class Main {
     }
     public static void displayTree(String[] array, int root, String space){
         System.out.println(space + "+node" + root);
+        space += "  ";
         for (int i = 0; i < array.length; i++) {
             if (array[i].equals(String.valueOf(root))) {
-                space += "  ";
                 displayTree(array, i, space);
             }
         }
